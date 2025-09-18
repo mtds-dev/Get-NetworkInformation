@@ -8,28 +8,28 @@ To begin using the Module start by downloading or clone the repo to a location s
 Open Powershell and browse to the folder where you downloaded\extracted the module.
 
 ```
-cd ~/Desktop/IPSubnetInformation
+cd ~/Desktop/Get-NetworkInformation
 ```
 
 Next you will need to import the module to have access to the command.  This needs to be done each time you open powershell or you'll need to place the module in your modules path.
 
 ```
-Import-Module ./Get-IPSubNetInformation.ps1
+Import-Module ./Get-NetworkInformation.ps1
 ```
 
-After successfully importing the module you can use the Get-IPSubNetInformation command.
+After successfully importing the module you can use the Get-NetworkInformation command.
 
 ```
-Get-IPSubNetInformation -IPAddress 10.10.10.1 -SubnetMask 255.255.255.0
+Get-NetworkInformation -IPAddress 10.10.10.1 -SubnetMask 255.255.255.0
 ```
 or
 
 ```
-Get-IPSubnetInformation -CIDRNotation 10.10.10.1/24
+Get-NetworkInformation -CIDRNotation 10.10.10.1/24
 ```
 
 # Additional Properties
-Get-IPSubNetInformation returns the following properties:
+Get-NetworkInformation returns the following properties:
 -IPAddress
 -CIDRNotation
 -SubnetMask
@@ -43,7 +43,7 @@ Get-IPSubNetInformation returns the following properties:
 # Other Examples
 
 ```
-$network = Get-IPSubNetInformation -CIDR 192.168.5.2/24
+$network = Get-NetworkInformation -CIDR 192.168.5.2/24
 
 foreach $ip in $network.UsableIPs {
     'do command for $ip
