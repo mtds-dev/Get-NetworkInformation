@@ -162,7 +162,6 @@ function Get-UsableIPAddressCount {
     }
 }
 
-
 function Get-UsableIPAddresses {
     [CmdletBinding()]
     param(
